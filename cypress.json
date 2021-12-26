@@ -1,4 +1,4 @@
 {
     "baseUrl" : "https://rwqa3.gtk.gtech.com/RetailerWizard",
-    "retries" : 2
+    "watchForFileChanges" : false
 }
