@@ -1,8 +1,10 @@
+const { afterEach } = require("mocha");
+
 describe('Verify that Admin can create all primary users', () => {
 
     beforeEach(() => {
         cy.login('sfasupport@igt.com', 'DullSpongyIde@15')
-        cy.wait(1000);
+        cy.wait(1000)
     });
 
     it('Create Primary Chain Head', () => {
@@ -12,7 +14,7 @@ describe('Verify that Admin can create all primary users', () => {
             force: true
         }) //next button
         //Fill out fields for CH
-        cy.CreateUser('automation test', 'LastName', 755000, 'noerm177+chainHeadP@gmail.com', 'noerm177+chainHeadP@gmail.com')
+        cy.CreateUser('automation test', 'LastName', 755000, 'noerm177+chainHeadS@gmail.com')
         cy.wait(1000)
         //Delete retailer
         cy.DeleteUser('noerm177+chainHeadP@gmail.com')
@@ -27,7 +29,7 @@ describe('Verify that Admin can create all primary users', () => {
             force: true
         }) //next button
         //Fill out fields for Subordinate 755002
-        cy.CreateUser('automation test', 'LastName', 755002, 'noerm177+subordinateP@gmail.com', 'noerm177+subordinateP@gmail.com')
+        cy.CreateUser('automation test', 'LastName', 755002, 'noerm177+subordinateP@gmail.com')
         cy.wait(1000)
         //Delete retailer
         cy.DeleteUser('noerm177+subordinateP@gmail.com')
@@ -42,7 +44,7 @@ describe('Verify that Admin can create all primary users', () => {
             force: true
         }) //next button
         cy.contains('Registration Pin').type(1234)
-        cy.CreateUser('automation test', 'LastName', 752000, 'noerm177+independentP@gmail.com', 'noerm177+independentP@gmail.com')
+        cy.CreateUser('automation test', 'LastName', 752000, 'noerm177+independentP@gmail.com')
         cy.wait(1000)
         //Delete retailer
         cy.DeleteUser('noerm177+independentP@gmail.com')

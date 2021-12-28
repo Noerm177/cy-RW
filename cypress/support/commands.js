@@ -14,18 +14,34 @@ Cypress.Commands.add('login', (email, password) => {
     cy.clearCookies()
     cy.visit('/')
     cy.wait(1000)
+    cy.get('body').then(($Manage) => {
+        if ($Manage.text().includes('Manage Users')) {
+            cy.get('[ng-if="$ctrl.topmenu.dropdown && $ctrl.session.loggedIn"] > .dropdown-container > .dropdown-toggle > button-label > .app-icon-button > rw-icon > .rw-icon').click()
+            cy.get('[ng-if="$ctrl.topmenu.logout"] > a').click()
+        }
+    })
+    cy.wait(1000)
     cy.get('.login-form > :nth-child(1) > .ng-pristine').type(email)
     cy.get('.login-form > :nth-child(2) > .ng-pristine').type(password)
     cy.get('.login-form > :nth-child(3) > .login__button > .rw-button').click()
 })
 
-Cypress.Commands.add('CreateUser', (FirstN, SecondN, RetailerID, Email, ConfirmE) => {
+Cypress.Commands.add('CreateUser', (FirstN, SecondN, RetailerID, Email) => {
     cy.contains('First Name').type(FirstN)
     cy.contains('Last Name').type(SecondN)
     cy.get('#create-account-form--retailerId').type(RetailerID)
     cy.get('#create-account-form--emailAddress').type(Email)
-    cy.get('#create-account-form--confirmEmail').type(ConfirmE)
+    cy.get('#create-account-form--confirmEmail').type(Email)
     cy.get('.rw-button.rw-button--contained').first().click()
+
+    cy.get("body").then(($role) => {
+        if ($role.text().includes('Set Permissions')) {
+            cy.get('#select_70').click()
+            cy.get('#select_option_74').click() //Roles
+            cy.get('.card-footer > .row > [variant="contained"] > .rw-button').click()
+        }
+    })
+
     //review info
     cy.get('.modal-footer > [variant="contained"] > .rw-button').should('be.visible').click()
     cy.get('.modal-content').should('include.text', 'Success!')
@@ -38,7 +54,7 @@ Cypress.Commands.add('CreateAdmin', (FirstN, SecondN, Email) => {
     cy.contains('Last Name').type(SecondN)
     cy.get('#create-account-form--emailAddress').type(Email)
     cy.get('#create-account-form--confirmEmail').type(Email)
-    cy.get('.rw-button.rw-button--contained').first().click()//submit
+    cy.get('.rw-button.rw-button--contained').first().click() //submit
     //review info
     cy.get('#select_70').click()
     cy.get('#select_option_74').click() //Roles
@@ -65,11 +81,15 @@ Cypress.Commands.add('DeleteUser', (email) => {
 })
 //cy.get('#email-filter')
 
-
 Cypress.Commands.add('LogOUT', () => {
-    cy.get('[ng-if="$ctrl.topmenu.dropdown && $ctrl.session.loggedIn"] > .dropdown-container > .dropdown-toggle > button-label > .app-icon-button > rw-icon > .rw-icon').
-    click()
-    cy.get('[ng-if="$ctrl.topmenu.logout"] > a').click()
+    cy.get('[ng-if="$ctrl.topmenu.dropdown && $ctrl.session.loggedIn"] > .dropdown-container > .dropdown-toggle > button-label > .app-icon-button > rw-icon > .rw-icon').click({force:true})
+    cy.get('[ng-if="$ctrl.topmenu.logout"] > a').click({force:true})
+    cy.get('body').then(($unsaved) => {
+        if ($unsaved.text().includes('unsaved')){
+            cy.get('.modal-footer > [variant="outlined"] > .rw-button').click({force:true})
+        }
+    })
+    cy.wait(1000)
 })
 
 
