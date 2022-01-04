@@ -1,0 +1,172 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2021-12-29T08:27:12.745Z",
+    "end": "2021-12-29T08:27:44.983Z",
+    "duration": 32238,
+    "testsRegistered": 4,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 3,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "20071468-ee23-4e93-a6f1-3c8676a3f3fe",
+      "title": "",
+      "fullFile": "cypress/integration/Create-Users/As-Admin-CreateAllPrimary-spec.js",
+      "file": "cypress/integration/Create-Users/As-Admin-CreateAllPrimary-spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ae639744-fb74-4414-b381-cb7ffc83a141",
+          "title": "Verify that Admin can create all primary users",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Create Primary Chain Head",
+              "fullTitle": "Verify that Admin can create all primary users Create Primary Chain Head",
+              "timedOut": null,
+              "duration": 31868,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      {\n        \"title\": \"Failed screenshot\",\n        \"value\": \"/Create-Users/As-Admin-CreateAllPrimary-spec.js/Verify that Admin can create all primary users -- Create Primary Chain Head -- before each hook (failed).png\"\n      }\n    ]\n  ]\n}",
+              "code": "cy.contains('Create User').click();\ncy.get(':nth-child(2) > :nth-child(3) > .card > .card-body > .row > .col-2').click(); //Click on chain head\ncy.get('.card-footer > .row > .ml-2 > .rw-button').click({\n  force: true\n}); //next button\n//Fill out fields for CH\ncy.CreateUser('automation test', 'LastName', 755000, 'noerm177+chainHeadS@gmail.com');\ncy.wait(1000); //Delete retailer\ncy.DeleteUser('noerm177+chainHeadP@gmail.com');\ncy.log('Chain Head was create');\ncy.LogOUT();",
+              "err": {
+                "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://rwqa3.gtk.gtech.com/RetailerWizard/\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: ESOCKETTIMEDOUT\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Verify that Admin can creat...`",
+                "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://rwqa3.gtk.gtech.com/RetailerWizard/\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: ESOCKETTIMEDOUT\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Verify that Admin can creat...`\n    at https://rwqa3.gtk.gtech.com/__cypress/runner/cypress_runner.js:158279:82\n    at visitFailedByErr (https://rwqa3.gtk.gtech.com/__cypress/runner/cypress_runner.js:157632:12)\n    at https://rwqa3.gtk.gtech.com/__cypress/runner/cypress_runner.js:158278:11\n    at tryCatcher (https://rwqa3.gtk.gtech.com/__cypress/runner/cypress_runner.js:13196:23)\n    at Promise._settlePromiseFromHandler (https://rwqa3.gtk.gtech.com/__cypress/runner/cypress_runner.js:11131:31)\n    at Promise._settlePromise (https://rwqa3.gtk.gtech.com/__cypress/runner/cypress_runner.js:11188:18)\n    at Promise._settlePromise0 (https://rwqa3.gtk.gtech.com/__cypress/runner/cypress_runner.js:11233:10)\n    at Promise._settlePromises (https://rwqa3.gtk.gtech.com/__cypress/runner/cypress_runner.js:11309:18)\n    at _drainQueueStep (https://rwqa3.gtk.gtech.com/__cypress/runner/cypress_runner.js:7903:12)\n    at _drainQueue (https://rwqa3.gtk.gtech.com/__cypress/runner/cypress_runner.js:7896:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://rwqa3.gtk.gtech.com/__cypress/runner/cypress_runner.js:7912:5)\n    at Async.drainQueues (https://rwqa3.gtk.gtech.com/__cypress/runner/cypress_runner.js:7782:14)\nFrom Your Spec Code:\n    at Context.eval (https://rwqa3.gtk.gtech.com/__cypress/tests?p=cypress/support/index.js:177:6)\n\nFrom Node.js Internals:\n  Error: ESOCKETTIMEDOUT\n      at ClientRequest.<anonymous> (/Users/noeruvalcaba/Library/Caches/Cypress/9.2.0/Cypress.app/Contents/Resources/app/node_modules/@cypress/request/request.js:808:19)\n      at Object.onceWrapper (node:events:513:28)\n      at ClientRequest.emit (node:events:394:28)\n      at TLSSocket.emitRequestTimeout (node:_http_client:761:9)\n      at Object.onceWrapper (node:events:513:28)\n      at TLSSocket.emit (node:events:406:35)\n      at TLSSocket.Socket._onTimeout (node:net:486:8)\n      at listOnTimeout (node:internal/timers:557:17)\n      at processTimers (node:internal/timers:500:7)\n  ",
+                "diff": null
+              },
+              "uuid": "885b8953-2453-4673-95a5-70c8b8e4718f",
+              "parentUUID": "ae639744-fb74-4414-b381-cb7ffc83a141",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Create Primary Subordinate",
+              "fullTitle": "Verify that Admin can create all primary users Create Primary Subordinate",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('Create User').click();\ncy.get(':nth-child(2) > :nth-child(2) > .card > .card-body > .row > .col-2').click(); //Click on chain head\ncy.get('.card-footer > .row > .ml-2 > .rw-button').click({\n  force: true\n}); //next button\n//Fill out fields for Subordinate 755002\ncy.CreateUser('automation test', 'LastName', 755002, 'noerm177+subordinateP@gmail.com');\ncy.wait(1000); //Delete retailer\ncy.DeleteUser('noerm177+subordinateP@gmail.com');\ncy.log('Chain Subordinate was create');\ncy.LogOUT();",
+              "err": {},
+              "uuid": "f8a63d48-1950-4f22-8cae-c352695e3867",
+              "parentUUID": "ae639744-fb74-4414-b381-cb7ffc83a141",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Create Independent",
+              "fullTitle": "Verify that Admin can create all primary users Create Independent",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('Create User').click();\ncy.get(':nth-child(2) > :nth-child(1) > .card > .card-body > .row > .col-2').click(); //Click on chain head\ncy.get('.card-footer > .row > .ml-2 > .rw-button').click({\n  force: true\n}); //next button\ncy.contains('Registration Pin').type(1234);\ncy.CreateUser('automation test', 'LastName', 752000, 'noerm177+independentP@gmail.com');\ncy.wait(1000); //Delete retailer\ncy.DeleteUser('noerm177+independentP@gmail.com');\ncy.log('Independent was create');\ncy.LogOUT();",
+              "err": {},
+              "uuid": "38571965-a8a9-42c8-b1b2-eb9ed17c965f",
+              "parentUUID": "ae639744-fb74-4414-b381-cb7ffc83a141",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Create Adminastrator",
+              "fullTitle": "Verify that Admin can create all primary users Create Adminastrator",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('Create User').click();\ncy.get(':nth-child(1) > :nth-child(1) > .card > .card-body > .row > .col-2').click(); //Click on chain head\ncy.get('.card-footer > .row > .ml-2 > .rw-button').click({\n  force: true\n}); //next button\ncy.CreateAdmin('automation test', 'LastName', 'noerm177+admin@gmail.com');\ncy.wait(1000); //Delete retailer\ncy.DeleteUser('noerm177+admin@gmail.com');\ncy.log('Admin was create');\ncy.LogOUT();",
+              "err": {},
+              "uuid": "161b7ec4-52c8-46be-96c0-c5d4b20c4fa5",
+              "parentUUID": "ae639744-fb74-4414-b381-cb7ffc83a141",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "885b8953-2453-4673-95a5-70c8b8e4718f"
+          ],
+          "pending": [],
+          "skipped": [
+            "f8a63d48-1950-4f22-8cae-c352695e3867",
+            "38571965-a8a9-42c8-b1b2-eb9ed17c965f",
+            "161b7ec4-52c8-46be-96c0-c5d4b20c4fa5"
+          ],
+          "duration": 31868,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.3.1"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/.jsons",
+        "charts": true,
+        "reportPageTitle": "My Test Suite",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

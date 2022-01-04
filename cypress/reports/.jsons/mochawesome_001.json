@@ -1,0 +1,153 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 2,
+    "pending": 0,
+    "failures": 1,
+    "start": "2021-12-29T08:27:53.014Z",
+    "end": "2021-12-29T08:29:32.548Z",
+    "duration": 99534,
+    "testsRegistered": 3,
+    "passPercent": 66.66666666666666,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "4dabefb6-1f5f-4bf1-9809-da39dd2f621a",
+      "title": "",
+      "fullFile": "cypress/integration/Create-Users/As-Admin-CreateAllSecondary-spec.js",
+      "file": "cypress/integration/Create-Users/As-Admin-CreateAllSecondary-spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "919114b7-0cf2-4956-934c-333800dbcfaf",
+          "title": "Verify that admin can create all the secondary users",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Create CH Secondary",
+              "fullTitle": "Verify that admin can create all the secondary users Create CH Secondary",
+              "timedOut": null,
+              "duration": 46104,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('Create User').click();\ncy.get(':nth-child(3) > :nth-child(3) > .card > .card-body > .row > .col-2').click(); //Click on chain head\ncy.get('.card-footer > .row > .ml-2 > .rw-button').click({\n  force: true\n});\ncy.CreateUser('automation test', 'LastName', 127202, 'noerm177+CH@gmail.com');\ncy.wait(1000);\ncy.get('body').then($error => {\n  // Error message\n  if ($error.text().includes('Error')) {\n    cy.get('.modal-footer > rw-button > .rw-button').click();\n  }\n}); //Delete retailer\ncy.DeleteUser('noerm177+CH@gmail.com');\ncy.log('CH secondary was create');\ncy.LogOUT();",
+              "err": {},
+              "uuid": "49b0eb36-5427-44ba-8e41-5fb90f8d15a6",
+              "parentUUID": "919114b7-0cf2-4956-934c-333800dbcfaf",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Create Subordinate Secondary",
+              "fullTitle": "Verify that admin can create all the secondary users Create Subordinate Secondary",
+              "timedOut": null,
+              "duration": 26780,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('Create User').click();\ncy.get(':nth-child(3) > :nth-child(2) > .card > .card-body > .row > .col-2').click(); //Click on chain head\ncy.get('.card-footer > .row > .ml-2 > .rw-button').click({\n  force: true\n});\ncy.CreateUser('automation test', 'LastName', 101155, 'noerm177+Sub@gmail.com');\ncy.wait(1000);\ncy.get('body').then($error => {\n  // Error message\n  if ($error.text().includes('Error')) {\n    cy.get('.modal-footer > rw-button > .rw-button').click();\n  }\n}); //Delete retailer\ncy.DeleteUser('noerm177+Sub@gmail.com');\ncy.log('CH secondary was create');\ncy.LogOUT();",
+              "err": {},
+              "uuid": "350bdbf6-779c-40e6-8413-2f46664a1d55",
+              "parentUUID": "919114b7-0cf2-4956-934c-333800dbcfaf",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Create Independent Secondary",
+              "fullTitle": "Verify that admin can create all the secondary users Create Independent Secondary",
+              "timedOut": null,
+              "duration": 15860,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      {\n        \"title\": \"Failed screenshot\",\n        \"value\": \"/Create-Users/As-Admin-CreateAllSecondary-spec.js/Verify that admin can create all the secondary users -- Create Independent Secondary (failed).png\"\n      }\n    ]\n  ]\n}",
+              "code": "cy.contains('Create User').click();\ncy.get(':nth-child(3) > :nth-child(1) > .card > .card-body > .row > .col-2').click(); //Click on chain head\ncy.get('.card-footer > .row > .ml-2 > .rw-button').click({\n  force: true\n}); //next button\ncy.CreateUser('automation test', 'LastName', 100627, 'noerm177+IndS@gmail.com');\ncy.wait(1000);\ncy.get('body').then($error => {\n  // Error message\n  if ($error.text().includes('Error')) {\n    cy.get('.modal-footer > rw-button > .rw-button').click();\n  }\n}); //Delete retailer\ncy.DeleteUser('noerm177+IndS@gmail.com');\ncy.log('Independent was create');\ncy.LogOUT();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '<div.modal-content>' to contain text 'Success!', but the text was '\\n   Unable to create User\\n\\n\\n   \\n   There is no active primary user\\n\\n\\n   \\n    \\n      OK\\n   \\n\\n\\n\\n'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<div.modal-content>' to contain text 'Success!', but the text was '\\n   Unable to create User\\n\\n\\n   \\n   There is no active primary user\\n\\n\\n   \\n    \\n      OK\\n   \\n\\n\\n\\n'\n    at Context.eval (https://rwqa3.gtk.gtech.com/__cypress/tests?p=cypress/support/index.js:207:28)",
+                "diff": "- '\\n   Unable to create User\\n\\n\\n   \\n   There is no active primary user\\n\\n\\n   \\n    \\n      OK\\n   \\n\\n\\n\\n'\n+ 'Success!'\n"
+              },
+              "uuid": "f0b7e3f1-06d3-485e-9b44-8d6af2de0a64",
+              "parentUUID": "919114b7-0cf2-4956-934c-333800dbcfaf",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "49b0eb36-5427-44ba-8e41-5fb90f8d15a6",
+            "350bdbf6-779c-40e6-8413-2f46664a1d55"
+          ],
+          "failures": [
+            "f0b7e3f1-06d3-485e-9b44-8d6af2de0a64"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 88744,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.3.1"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/.jsons",
+        "charts": true,
+        "reportPageTitle": "My Test Suite",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

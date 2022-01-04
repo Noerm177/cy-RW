@@ -70,8 +70,9 @@ Cypress.Commands.add('CreateAdmin', (FirstN, SecondN, Email) => {
 Cypress.Commands.add('DeleteUser', (email) => {
     cy.get('#email-filter').type(email)
     cy.get('.filter-buttons-width > .row > .mr-2 > .rw-button').click() //search button  
-    cy.wait(1000)
     cy.get('a.break-word').eq(0).click() // Select user from list
+    cy.wait(1000)
+
     cy.get('[ng-if="$ctrl.canUpdateData && $ctrl.canEditAccountDetails"] > a').click({
         force: true
     }) // click on delete
@@ -89,7 +90,6 @@ Cypress.Commands.add('LogOUT', () => {
             cy.get('.modal-footer > [variant="outlined"] > .rw-button').click({force:true})
         }
     })
-    cy.wait(1000)
 })
 
 

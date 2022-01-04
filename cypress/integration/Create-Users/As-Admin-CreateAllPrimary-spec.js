@@ -1,5 +1,3 @@
-const { afterEach } = require("mocha");
-
 describe('Verify that Admin can create all primary users', () => {
 
     beforeEach(() => {

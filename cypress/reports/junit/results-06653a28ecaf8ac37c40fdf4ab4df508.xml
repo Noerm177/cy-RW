@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="99.5610" tests="3" failures="1">
+  <testsuite name="Root Suite" timestamp="2021-12-29T08:27:53" tests="0" file="cypress/integration/Create-Users/As-Admin-CreateAllSecondary-spec.js" time="0.0000" failures="0">
+  </testsuite>
+  <testsuite name="Verify that admin can create all the secondary users" timestamp="2021-12-29T08:27:53" tests="3" time="99.4840" failures="1">
+    <testcase name="Verify that admin can create all the secondary users Create CH Secondary" time="46.1040" classname="Create CH Secondary">
+    </testcase>
+    <testcase name="Verify that admin can create all the secondary users Create Subordinate Secondary" time="26.7800" classname="Create Subordinate Secondary">
+    </testcase>
+    <testcase name="Verify that admin can create all the secondary users Create Independent Secondary" time="0.0000" classname="Create Independent Secondary">
+      <failure message="Timed out retrying after 4000ms: expected &apos;&lt;div.modal-content&gt;&apos; to contain text &apos;Success!&apos;, but the text was &apos;\n   Unable to create User\n\n\n   \n   There is no active primary user\n\n\n   \n    \n      OK\n   \n\n\n\n&apos;" type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: expected '<div.modal-content>' to contain text 'Success!', but the text was '\n   Unable to create User\n\n\n   \n   There is no active primary user\n\n\n   \n    \n      OK\n   \n\n\n\n'
+    at Context.eval (https://rwqa3.gtk.gtech.com/__cypress/tests?p=cypress/support/index.js:207:28)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>

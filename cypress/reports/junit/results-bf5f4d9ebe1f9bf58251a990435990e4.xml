@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="32.2470" tests="4" failures="1">
+  <testsuite name="Root Suite" timestamp="2021-12-29T08:27:12" tests="0" file="cypress/integration/Create-Users/As-Admin-CreateAllPrimary-spec.js" time="0.0000" failures="0">
+  </testsuite>
+  <testsuite name="Verify that Admin can create all primary users" timestamp="2021-12-29T08:27:12" tests="4" time="32.1900" failures="1">
+    <testcase name="Verify that Admin can create all primary users &quot;before each&quot; hook for &quot;Create Primary Chain Head&quot;" time="0.0000" classname="&quot;before each&quot; hook for &quot;Create Primary Chain Head&quot;">
+      <failure message="`cy.visit()` failed trying to load:
+
+https://rwqa3.gtk.gtech.com/RetailerWizard/
+
+We attempted to make an http request to this URL but the request failed without a response.
+
+We received this error at the network level:
+
+  &gt; Error: ESOCKETTIMEDOUT
+
+Common situations why this would fail:
+  - you don&apos;t have internet access
+  - you forgot to run / boot your web server
+  - your web server isn&apos;t accessible
+  - you have weird network configuration settings on your computer
+
+Because this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Verify that Admin can creat...`" type="CypressError"><![CDATA[CypressError: `cy.visit()` failed trying to load:
+
+https://rwqa3.gtk.gtech.com/RetailerWizard/
+
+We attempted to make an http request to this URL but the request failed without a response.
+
+We received this error at the network level:
+
+  > Error: ESOCKETTIMEDOUT
+
+Common situations why this would fail:
+  - you don't have internet access
+  - you forgot to run / boot your web server
+  - your web server isn't accessible
+  - you have weird network configuration settings on your computer
+
+Because this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Verify that Admin can creat...`
+    at https://rwqa3.gtk.gtech.com/__cypress/runner/cypress_runner.js:158279:82
+    at visitFailedByErr (https://rwqa3.gtk.gtech.com/__cypress/runner/cypress_runner.js:157632:12)
+    at https://rwqa3.gtk.gtech.com/__cypress/runner/cypress_runner.js:158278:11
+    at tryCatcher (https://rwqa3.gtk.gtech.com/__cypress/runner/cypress_runner.js:13196:23)
+    at Promise._settlePromiseFromHandler (https://rwqa3.gtk.gtech.com/__cypress/runner/cypress_runner.js:11131:31)
+    at Promise._settlePromise (https://rwqa3.gtk.gtech.com/__cypress/runner/cypress_runner.js:11188:18)
+    at Promise._settlePromise0 (https://rwqa3.gtk.gtech.com/__cypress/runner/cypress_runner.js:11233:10)
+    at Promise._settlePromises (https://rwqa3.gtk.gtech.com/__cypress/runner/cypress_runner.js:11309:18)
+    at _drainQueueStep (https://rwqa3.gtk.gtech.com/__cypress/runner/cypress_runner.js:7903:12)
+    at _drainQueue (https://rwqa3.gtk.gtech.com/__cypress/runner/cypress_runner.js:7896:9)
+    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://rwqa3.gtk.gtech.com/__cypress/runner/cypress_runner.js:7912:5)
+    at Async.drainQueues (https://rwqa3.gtk.gtech.com/__cypress/runner/cypress_runner.js:7782:14)
+From Your Spec Code:
+    at Context.eval (https://rwqa3.gtk.gtech.com/__cypress/tests?p=cypress/support/index.js:177:6)
+
+From Node.js Internals:
+  Error: ESOCKETTIMEDOUT
+      at ClientRequest.<anonymous> (/Users/noeruvalcaba/Library/Caches/Cypress/9.2.0/Cypress.app/Contents/Resources/app/node_modules/@cypress/request/request.js:808:19)
+      at Object.onceWrapper (node:events:513:28)
+      at ClientRequest.emit (node:events:394:28)
+      at TLSSocket.emitRequestTimeout (node:_http_client:761:9)
+      at Object.onceWrapper (node:events:513:28)
+      at TLSSocket.emit (node:events:406:35)
+      at TLSSocket.Socket._onTimeout (node:net:486:8)
+      at listOnTimeout (node:internal/timers:557:17)
+      at processTimers (node:internal/timers:500:7)
+  ]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>
